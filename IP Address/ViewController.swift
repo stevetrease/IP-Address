@@ -8,10 +8,19 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let interfaces = Interface.allInterfaces()
+        print (interfaces.count)
+        
+        for interface in interfaces {
+            print (interface.description, interface.address)
+        }
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -19,7 +28,4 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-
