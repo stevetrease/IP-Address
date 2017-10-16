@@ -40,8 +40,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
         
-        print ("cell - \(indexPath.row)")
-        
         cell.textLabel?.text = interfaces[indexPath.row].description
         cell.detailTextLabel?.text = interfaces[indexPath.row].address
         
