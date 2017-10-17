@@ -43,6 +43,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = interfaces[indexPath.row].description
         cell.detailTextLabel?.text = interfaces[indexPath.row].address
         
+        print ("\(interfaces[indexPath.row].debugDescription)")
+        
         return cell
     }
     
