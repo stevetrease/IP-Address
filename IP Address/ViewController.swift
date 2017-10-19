@@ -18,10 +18,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // interfaces = Interface.allInterfaces()
-        print (interfaces.count)
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        interfaces = Interface.allInterfaces()
+        interfaces.sort {
+            if $0.description == $1.description { return $0.address! < $1.address! }
+            return $0.description < $1.description
+        }
     }
     
 
@@ -43,7 +44,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = interfaces[indexPath.row].description
         cell.detailTextLabel?.text = interfaces[indexPath.row].address
         
-        print ("\(interfaces[indexPath.row].debugDescription)")
+        // print ("\(interfaces[indexPath.row].debugDescription)")
         
         return cell
     }
@@ -53,7 +54,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func screenTappedTriggered(sender: AnyObject) {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         interfaces = Interface.allInterfaces()
-        print (interfaces.count)
+        interfaces.sort {
+            if $0.description == $1.description { return $0.address! < $1.address! }
+            return $0.description < $1.description
+        }
         self.tableView.reloadData()
     }
 }
