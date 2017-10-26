@@ -12,17 +12,16 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var IPv4filterSwitch: UISwitch!
+    @IBOutlet var IPv6filterSwitch: UISwitch!
+    
         
     var interfaces = Interface.allInterfaces()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        interfaces = Interface.allInterfaces()
-        interfaces.sort {
-            if $0.description == $1.description { return $0.address! < $1.address! }
-            return $0.description < $1.description
-        }
+        refreshAndSortAndFilterData()
     }
     
 
@@ -33,7 +32,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print (interfaces.count)
         return interfaces.count
     }
     
@@ -49,15 +47,42 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    @IBAction func switchToggled(_ sender: UISwitch) {
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        refreshAndSortAndFilterData()
+        self.tableView.reloadData()
+    }
+    
     
     // screen tap to refresh 
     @IBAction func screenTappedTriggered(sender: AnyObject) {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        refreshAndSortAndFilterData()
+        self.tableView.reloadData()
+    }
+    
+    
+    func refreshAndSortAndFilterData () {
         interfaces = Interface.allInterfaces()
+        
+        let IPv4Interfaces = interfaces.filter { $0.family == .ipv4 }
+        let IPv6Interfaces = interfaces.filter { $0.family == .ipv6 }
+        
+        print ("\(IPv4Interfaces.count) \(IPv6Interfaces.count) \(interfaces.count)")
+        
+        interfaces = []
+        if (IPv4filterSwitch.isOn) {
+            interfaces = interfaces + IPv4Interfaces
+        }
+        if (IPv6filterSwitch.isOn) {
+            interfaces = interfaces + IPv6Interfaces
+        }
+        
+        print (interfaces.count)
+        
         interfaces.sort {
             if $0.description == $1.description { return $0.address! < $1.address! }
             return $0.description < $1.description
         }
-        self.tableView.reloadData()
     }
 }
