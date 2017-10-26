@@ -68,7 +68,7 @@
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="fill" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4D9-QY-Z7f">
                                                         <rect key="frame" x="44.666666666666657" y="0.0" width="51" height="0.0"/>
-                                                        <color key="onTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="onTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <action selector="switchToggled:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="5Ua-gF-yFX"/>
                                                         </connections>
@@ -86,7 +86,7 @@
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="fill" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k1l-3t-xif">
                                                         <rect key="frame" x="44.666666666666657" y="0.0" width="51" height="0.0"/>
-                                                        <color key="onTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="onTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <action selector="switchToggled:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="gnG-yw-32a"/>
                                                         </connections>
@@ -104,7 +104,7 @@
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="fill" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6Ys-Jh-a0y">
                                                         <rect key="frame" x="44.666666666666686" y="0.0" width="51" height="0.0"/>
-                                                        <color key="onTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="onTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <action selector="switchToggled:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="7MP-d9-PXP"/>
                                                         </connections>
