@@ -32,6 +32,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        refreshAndSortAndFilterData()
+        self.tableView.reloadData()
+    }
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return interfaces.count
     }
@@ -43,11 +51,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = interfaces[indexPath.row].description
         cell.detailTextLabel?.text = interfaces[indexPath.row].address
         
-        // print ("\(interfaces[indexPath.row].debugDescription)")
-        
         return cell
     }
     
+    
+    // Toggle switches toggled
     @IBAction func switchToggled(_ sender: UISwitch) {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         refreshAndSortAndFilterData()
@@ -66,24 +74,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func refreshAndSortAndFilterData () {
         interfaces = Interface.allInterfaces()
         
-        let IPv4Interfaces = interfaces.filter { $0.family == .ipv4 }
-        let IPv6Interfaces = interfaces.filter { $0.family == .ipv6 }
+        var IPv4Interfaces = interfaces.filter { $0.family == .ipv4 }
+        var IPv6Interfaces = interfaces.filter { $0.family == .ipv6 }
         
         print ("\(IPv4Interfaces.count) \(IPv6Interfaces.count) \(interfaces.count)")
         
-        interfaces = []
-        if (IPv4filterSwitch.isOn) {
-            interfaces = interfaces + IPv4Interfaces
+        if (!IPv4filterSwitch.isOn) {
+            IPv4Interfaces = []
         }
-        if (IPv6filterSwitch.isOn) {
-            interfaces = interfaces + IPv6Interfaces
+        if (!IPv6filterSwitch.isOn) {
+            IPv6Interfaces = []
+        } else {
+            if (!linkLayerfilterSwitch.isOn) {
+                IPv6Interfaces = IPv6Interfaces.filter { !($0.address?.hasPrefix ("fe80"))! }
+            }
         }
         
-        print (interfaces.count)
+        interfaces = IPv4Interfaces + IPv6Interfaces
         
         interfaces.sort {
             if $0.description == $1.description { return $0.address! < $1.address! }
             return $0.description < $1.description
         }
+        
+        print (interfaces.count)
     }
 }
