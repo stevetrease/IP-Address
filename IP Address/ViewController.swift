@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var tableView: UITableView!
     @IBOutlet var IPv4filterSwitch: UISwitch!
     @IBOutlet var IPv6filterSwitch: UISwitch!
+    @IBOutlet var linkLayerfilterSwitch: UISwitch!
     
         
     var interfaces = Interface.allInterfaces()

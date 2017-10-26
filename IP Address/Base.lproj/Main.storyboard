@@ -105,6 +105,9 @@
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="fill" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ys-Jh-a0y">
                                                         <rect key="frame" x="44.666666666666686" y="0.0" width="51" height="0.0"/>
                                                         <color key="onTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <action selector="switchToggled:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="7MP-d9-PXP"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                             </stackView>
@@ -129,6 +132,7 @@
                     <connections>
                         <outlet property="IPv4filterSwitch" destination="4D9-QY-Z7f" id="isA-GW-TSe"/>
                         <outlet property="IPv6filterSwitch" destination="k1l-3t-xif" id="lvu-W6-Qvh"/>
+                        <outlet property="linkLayerfilterSwitch" destination="6Ys-Jh-a0y" id="eEf-5X-skh"/>
                         <outlet property="tableView" destination="ATv-ck-YdY" id="aCH-cM-tuT"/>
                     </connections>
                 </viewController>
