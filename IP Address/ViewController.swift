@@ -31,13 +31,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Dispose of any resources that can be recreated.
     }
     
-    /*
-    override func viewDidAppear(_ animated: Bool) {
-        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
-        super.viewDidAppear(animated)
-        refreshAndSortAndFilterData()
-        self.tableView.reloadData()
-    }*/
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
