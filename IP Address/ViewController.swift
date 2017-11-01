@@ -51,6 +51,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // Toggle switches toggled
     @IBAction func switchToggled(_ sender: UISwitch) {
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        if (sender == IPv6filterSwitch) {
+            if (IPv6filterSwitch.isOn) {
+                linkLayerfilterSwitch.isEnabled = true
+            } else {
+                linkLayerfilterSwitch.isEnabled = false
+            }
+        }
         refreshAndSortAndFilterData()
         self.tableView.reloadData()
     }
