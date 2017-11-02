@@ -19,6 +19,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     var interfaces = Interface.allInterfaces()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,8 +32,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return interfaces.count
     }
@@ -72,6 +72,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func refreshAndSortAndFilterData () {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
         interfaces = Interface.allInterfaces()
         
         var IPv4Interfaces = interfaces.filter { $0.family == .ipv4 }
@@ -98,5 +100,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         print (interfaces.count)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 }
