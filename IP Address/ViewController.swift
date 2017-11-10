@@ -18,10 +18,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
         
     var interfaces = Interface.allInterfaces()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let hostname = "www.trease.eu"
+        let dns = DNSLookup.lookup(hostname)
+        print (hostname + ":" + dns)
+        
+        let ip = "8.8.8.8"
+        let dnsName = DNSLookup.reverseLookup(ip)
+        print (ip + ":" + dnsName)
         
         refreshAndSortAndFilterData()
     }
