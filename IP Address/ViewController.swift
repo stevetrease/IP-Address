@@ -23,6 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
         // setup pull to refresh
         refresher = UIRefreshControl()
