@@ -17,19 +17,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var linkLayerfilterSwitch: UISwitch!
     
         
-    var interfaces = Interface.allInterfaces()
+    private var interfaces = Interface.allInterfaces()
+    private var refresher: UIRefreshControl!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let hostname = "www.trease.eu"
-        let dns = DNSLookup.lookup(hostname)
-        print (hostname + ":" + dns)
+        // setup pull to refresh
+        refresher = UIRefreshControl()
+        tableView.addSubview(refresher)
+        refresher.attributedTitle = NSAttributedString (string: "Pull to refresh")
+        refresher.addTarget(self, action: #selector(refreshAndSortAndFilterData), for: .valueChanged)
         
-        let ip = "8.8.8.8"
-        let dnsName = DNSLookup.reverseLookup(ip)
-        print (ip + ":" + dnsName)
+        // let hostname = "www.trease.eu"
+        // let dns = DNSLookup.lookup(hostname)
+        // print (hostname + ":" + dns)
+        
+        // let ip = "8.8.8.8"
+        // let dnsName = DNSLookup.reverseLookup(ip)
+        // print (ip + ":" + dnsName)
         
         refreshAndSortAndFilterData()
     }
@@ -67,19 +74,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
         refreshAndSortAndFilterData()
-        self.tableView.reloadData()
     }
     
     
-    // screen tap to refresh 
-    @IBAction func screenTappedTriggered(sender: AnyObject) {
-        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
-        refreshAndSortAndFilterData()
-        self.tableView.reloadData()
-    }
-    
-    
-    func refreshAndSortAndFilterData () {
+    @objc func refreshAndSortAndFilterData () {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         interfaces = Interface.allInterfaces()
@@ -108,6 +106,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         print (interfaces.count)
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        tableView.reloadData()
+        refresher.endRefreshing()
     }
 }
