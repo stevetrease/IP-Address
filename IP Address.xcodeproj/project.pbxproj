@@ -78,8 +78,10 @@
 			buildConfigurationList = AAE2352E1F91223400FB8E69 /* Build configuration list for PBXNativeTarget "IP Address" */;
 			buildPhases = (
 				AAE235181F91223400FB8E69 /* Sources */,
+				AABD65D91FC708FC00A4B0A1 /* ShellScript */,
 				AAE235191F91223400FB8E69 /* Frameworks */,
 				AAE2351A1F91223400FB8E69 /* Resources */,
+				AABD65DA1FC708FD00A4B0A1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -136,6 +138,35 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AABD65D91FC708FC00A4B0A1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ./updateSplashScreen.sh;
+		};
+		AABD65DA1FC708FD00A4B0A1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ./updateBuildVersionNumber.sh;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AAE235181F91223400FB8E69 /* Sources */ = {

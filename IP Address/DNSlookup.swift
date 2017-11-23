@@ -15,7 +15,6 @@ import Foundation
 
 
 
-
 public class DNSLookup {
     open static func lookup(_ hostname: String) -> String {
         var address:String = ""
