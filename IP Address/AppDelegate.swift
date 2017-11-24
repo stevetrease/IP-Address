@@ -16,8 +16,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        
+        print ("device uuid ", (UIDevice.current.identifierForVendor?.uuidString)!)
+        
+        let appName: String = (Bundle.main.infoDictionary?["CFBundleName"] as? String)!
+        let versionNumber: String = (Bundle.main.infoDictionary?["CFBundleVersion"] as? String)!
+        print ("\(appName)  (\(versionNumber))")
+        
+        switch (application.applicationState) {
+        case .active:
+            print ("didFinishLaunchingWithOptions - active")
+        case .inactive:
+            print ("didFinishLaunchingWithOptions - inactive")
+        case .background:
+            print ("didFinishLaunchingWithOptions - background")
+        }
+        
         return true
     }
+    
+    
+    func applicationWillEnterForeground(application: UIApplication) {
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        print ("applicationWillEnterForeground")
+    }
+    
+    
+    func applicationDidBecomeActive(application: UIApplication) {
+        print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
+        print ("applicationDidBecomeActive")
+    }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
