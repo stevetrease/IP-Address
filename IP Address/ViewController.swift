@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         refresher = UIRefreshControl()
         tableView.addSubview(refresher)
         refresher.attributedTitle = NSAttributedString (string: "Pull to refresh")
-        refresher.addTarget(self, action: #selector(refreshAndSortAndFilterData), for: .valueChanged)
+        refresher.addTarget(self, action: #selector(refreshSortAndFilterData), for: .valueChanged)
         
         // let hostname = "www.trease.eu"
         // let dns = DNSLookup.lookup(hostname)
@@ -39,7 +39,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // let dnsName = DNSLookup.reverseLookup(ip)
         // print (ip + ":" + dnsName)
         
-        refreshAndSortAndFilterData()
+        refreshSortAndFilterData()
     }
     
 
@@ -74,11 +74,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 linkLayerfilterSwitch.isEnabled = false
             }
         }
-        refreshAndSortAndFilterData()
+        refreshSortAndFilterData()
     }
     
     
-    @objc func refreshAndSortAndFilterData () {
+    @objc func refreshSortAndFilterData () {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         interfaces = Interface.allInterfaces()
