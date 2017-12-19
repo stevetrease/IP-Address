@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let versionNumber: String = (Bundle.main.infoDictionary?["CFBundleVersion"] as? String)!
         print ("\(appName)  (\(versionNumber))")
         
-        MSAppCenter.start("8fb724db-5358-43ca-9d83-e76d88e982a5", withServices:[
+        MSAppCenter.start(appCenterToken, withServices:[
             MSAnalytics.self,
             MSCrashes.self
         ])

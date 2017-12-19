@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA12DD8F1FAB85F8004EB978 /* DNSlookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA12DD8E1FAB85F8004EB978 /* DNSlookup.swift */; };
+		AA3757981FE94E1000F59336 /* AppCenterToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3757971FE94E1000F59336 /* AppCenterToken.swift */; };
 		AAE235201F91223400FB8E69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE2351F1F91223400FB8E69 /* AppDelegate.swift */; };
 		AAE235221F91223400FB8E69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE235211F91223400FB8E69 /* ViewController.swift */; };
 		AAE235251F91223400FB8E69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE235231F91223400FB8E69 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		AA12DD8E1FAB85F8004EB978 /* DNSlookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNSlookup.swift; sourceTree = "<group>"; };
+		AA3757971FE94E1000F59336 /* AppCenterToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterToken.swift; sourceTree = "<group>"; };
 		AAE2351C1F91223400FB8E69 /* IP Address.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IP Address.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE2351F1F91223400FB8E69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAE235211F91223400FB8E69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				AAE2351F1F91223400FB8E69 /* AppDelegate.swift */,
+				AA3757971FE94E1000F59336 /* AppCenterToken.swift */,
 				AAE235211F91223400FB8E69 /* ViewController.swift */,
 				AA12DD8E1FAB85F8004EB978 /* DNSlookup.swift */,
 				AAE235331F91254800FB8E69 /* Interface.swift */,
@@ -245,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA3757981FE94E1000F59336 /* AppCenterToken.swift in Sources */,
 				AAE235221F91223400FB8E69 /* ViewController.swift in Sources */,
 				AA12DD8F1FAB85F8004EB978 /* DNSlookup.swift in Sources */,
 				AAE235201F91223400FB8E69 /* AppDelegate.swift in Sources */,
