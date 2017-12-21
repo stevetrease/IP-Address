@@ -101,10 +101,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         interfaces = IPv4Interfaces + IPv6Interfaces
         
+        print ("making unique")
+        print (interfaces.count)
+        var uniqueArray: [Interface] = []
+        for interface in interfaces {
+            var found = false
+            for item in uniqueArray {
+                if (interface.description == item.description && interface.address == item.address) {
+                    found = true
+                    break
+                }
+            }
+            if (!found) {
+                uniqueArray.append (interface)
+            }
+        }
+        interfaces = uniqueArray
+        
         interfaces.sort {
             if $0.description == $1.description { return $0.address! < $1.address! }
             return $0.description < $1.description
         }
+        
+        
         
         print (interfaces.count)
         tableView.reloadData()

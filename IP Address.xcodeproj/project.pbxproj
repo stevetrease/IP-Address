@@ -12,7 +12,6 @@
 		AA343B751FEBF5D900CB6E03 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA343B731FEBF5D900CB6E03 /* Interface.storyboard */; };
 		AA343B771FEBF5D900CB6E03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA343B761FEBF5D900CB6E03 /* Assets.xcassets */; };
 		AA343B7E1FEBF5D900CB6E03 /* IP Address WatchOS Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AA343B7D1FEBF5D900CB6E03 /* IP Address WatchOS Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		AA343B831FEBF5D900CB6E03 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA343B821FEBF5D900CB6E03 /* InterfaceController.swift */; };
 		AA343B851FEBF5D900CB6E03 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA343B841FEBF5D900CB6E03 /* ExtensionDelegate.swift */; };
 		AA343B871FEBF5D900CB6E03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA343B861FEBF5D900CB6E03 /* Assets.xcassets */; };
 		AA343B8B1FEBF5D900CB6E03 /* IP Address WatchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AA343B711FEBF5D900CB6E03 /* IP Address WatchOS.app */; };
@@ -78,7 +77,6 @@
 		AA343B761FEBF5D900CB6E03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA343B781FEBF5D900CB6E03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA343B7D1FEBF5D900CB6E03 /* IP Address WatchOS Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "IP Address WatchOS Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA343B821FEBF5D900CB6E03 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		AA343B841FEBF5D900CB6E03 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		AA343B861FEBF5D900CB6E03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA343B881FEBF5D900CB6E03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 		AA343B811FEBF5D900CB6E03 /* IP Address WatchOS Extension */ = {
 			isa = PBXGroup;
 			children = (
-				AA343B821FEBF5D900CB6E03 /* InterfaceController.swift */,
 				AA343B841FEBF5D900CB6E03 /* ExtensionDelegate.swift */,
 				AA343B861FEBF5D900CB6E03 /* Assets.xcassets */,
 				AA343B881FEBF5D900CB6E03 /* Info.plist */,
@@ -413,7 +410,6 @@
 				AA22A2031FEBFC6D001B0D91 /* IPAddressRowController.swift in Sources */,
 				AA343B851FEBF5D900CB6E03 /* ExtensionDelegate.swift in Sources */,
 				AA343B971FEBFA7400CB6E03 /* IPAddressInterfaceController.swift in Sources */,
-				AA343B831FEBF5D900CB6E03 /* InterfaceController.swift in Sources */,
 				AA343B951FEBF60C00CB6E03 /* Interface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
