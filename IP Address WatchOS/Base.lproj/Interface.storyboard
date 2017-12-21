@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
+    </dependencies>
+    <scenes>
+        <!--Address Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="IPAddressInterfaceController" customModule="IP_Address_WatchOS_Extension">
+                    <items>
+                        <table alignment="left" id="i2X-hA-0kv">
+                            <items>
+                                <tableRow identifier="addressRowCell" id="Uc3-TQ-B5f" customClass="IPAddressRowController" customModule="IP_Address_WatchOS_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="fmx-sJ-zdN">
+                                        <items>
+                                            <label alignment="left" text="Label" id="KyL-kB-bMT"/>
+                                            <label alignment="left" text="Label" numberOfLines="0" id="xk0-MS-mpD">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="IPAddressLabel" destination="xk0-MS-mpD" id="O2k-d4-Xm0"/>
+                                        <outlet property="interfaceLabel" destination="KyL-kB-bMT" id="3a2-Yc-qYv"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                            <gestureRecognizers>
+                                <tapGestureRecognizer id="HsP-av-nkJ">
+                                    <connections>
+                                        <action selector="screenTappedTriggeredWithSender:" destination="AgC-eL-Hgc" id="NRb-HP-Cqk"/>
+                                    </connections>
+                                </tapGestureRecognizer>
+                            </gestureRecognizers>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="IPAddressesTable" destination="i2X-hA-0kv" id="lxT-WQ-i4e"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+    </scenes>
+</document>
