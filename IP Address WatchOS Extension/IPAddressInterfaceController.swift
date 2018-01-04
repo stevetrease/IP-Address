@@ -68,7 +68,7 @@ class IPAddressInterfaceController: WKInterfaceController {
     func refreshSortAndFilterData () {
         interfaces = Interface.allInterfaces()
         
-        var IPv4Interfaces = interfaces.filter { $0.family == .ipv4 }
+        let IPv4Interfaces = interfaces.filter { $0.family == .ipv4 }
         var IPv6Interfaces = interfaces.filter { $0.family == .ipv6 }
         
         // print ("\(IPv4Interfaces.count) \(IPv6Interfaces.count) \(interfaces.count)")

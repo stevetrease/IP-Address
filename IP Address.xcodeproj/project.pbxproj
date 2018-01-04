@@ -17,7 +17,6 @@
 		AA343B8B1FEBF5D900CB6E03 /* IP Address WatchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AA343B711FEBF5D900CB6E03 /* IP Address WatchOS.app */; };
 		AA343B951FEBF60C00CB6E03 /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA343B941FEBF60C00CB6E03 /* Interface.swift */; };
 		AA343B971FEBFA7400CB6E03 /* IPAddressInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA343B961FEBFA7400CB6E03 /* IPAddressInterfaceController.swift */; };
-		AA3757981FE94E1000F59336 /* AppCenterToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3757971FE94E1000F59336 /* AppCenterToken.swift */; };
 		AAE235201F91223400FB8E69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE2351F1F91223400FB8E69 /* AppDelegate.swift */; };
 		AAE235221F91223400FB8E69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE235211F91223400FB8E69 /* ViewController.swift */; };
 		AAE235251F91223400FB8E69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE235231F91223400FB8E69 /* Main.storyboard */; };
@@ -82,7 +81,6 @@
 		AA343B881FEBF5D900CB6E03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA343B941FEBF60C00CB6E03 /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
 		AA343B961FEBFA7400CB6E03 /* IPAddressInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAddressInterfaceController.swift; sourceTree = "<group>"; };
-		AA3757971FE94E1000F59336 /* AppCenterToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCenterToken.swift; sourceTree = "<group>"; };
 		AAE2351C1F91223400FB8E69 /* IP Address.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IP Address.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE2351F1F91223400FB8E69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAE235211F91223400FB8E69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +107,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F08E45FF03556FE3AD50F8D7 /* Pods_IP_Address.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA34DEE51FA597AE9584BC41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				AAE2351F1F91223400FB8E69 /* AppDelegate.swift */,
-				AA3757971FE94E1000F59336 /* AppCenterToken.swift */,
 				AAE235211F91223400FB8E69 /* ViewController.swift */,
 				AA12DD8E1FAB85F8004EB978 /* DNSlookup.swift */,
 				AAE235331F91254800FB8E69 /* Interface.swift */,
@@ -202,6 +206,7 @@
 			buildPhases = (
 				AA343B6F1FEBF5D900CB6E03 /* Resources */,
 				AA343B911FEBF5D900CB6E03 /* Embed App Extensions */,
+				EA34DEE51FA597AE9584BC41 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -418,7 +423,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA3757981FE94E1000F59336 /* AppCenterToken.swift in Sources */,
 				AAE235221F91223400FB8E69 /* ViewController.swift in Sources */,
 				AA12DD8F1FAB85F8004EB978 /* DNSlookup.swift in Sources */,
 				AAE235201F91223400FB8E69 /* AppDelegate.swift in Sources */,

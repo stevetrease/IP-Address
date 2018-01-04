@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import AppCenter
-import AppCenterAnalytics
-import AppCenterCrashes
 
 
 @UIApplicationMain
@@ -27,11 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let appName: String = (Bundle.main.infoDictionary?["CFBundleName"] as? String)!
         let versionNumber: String = (Bundle.main.infoDictionary?["CFBundleVersion"] as? String)!
         print ("\(appName)  (\(versionNumber))")
-        
-        MSAppCenter.start(appCenterToken, withServices:[
-            MSAnalytics.self,
-            MSCrashes.self
-        ])
         
         switch (application.applicationState) {
         case .active:
