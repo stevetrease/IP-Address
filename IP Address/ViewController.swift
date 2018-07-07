@@ -60,8 +60,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
         
         cell.textLabel?.text = interfaces[indexPath.row].description
-        cell.detailTextLabel?.text = interfaces[indexPath.row].address
-        
+        cell.detailTextLabel?.text = interfaces[indexPath.row].address!
+
         return cell
     }
     
