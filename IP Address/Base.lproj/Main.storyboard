@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14112" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,8 +21,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aXX-aH-RTQ">
                                 <rect key="frame" x="0.0" y="20" width="414" height="706"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ssid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anq-wf-6bz" userLabel="ssid Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="31.333333333333332"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ATv-ck-YdY">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="654.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="31.333333333333314" width="414" height="623.33333333333348"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="4Ib-w1-KsL" detailTextLabel="3gV-GT-tPw" style="IBUITableViewCellStyleValue1" id="wGa-uZ-JhJ">
@@ -130,6 +137,7 @@
                         <outlet property="IPv4filterSwitch" destination="4D9-QY-Z7f" id="isA-GW-TSe"/>
                         <outlet property="IPv6filterSwitch" destination="k1l-3t-xif" id="lvu-W6-Qvh"/>
                         <outlet property="linkLayerfilterSwitch" destination="6Ys-Jh-a0y" id="eEf-5X-skh"/>
+                        <outlet property="ssidLabel" destination="anq-wf-6bz" id="8Db-Q6-CKW"/>
                         <outlet property="tableView" destination="ATv-ck-YdY" id="aCH-cM-tuT"/>
                     </connections>
                 </viewController>

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SystemConfiguration.CaptiveNetwork
 
 
 
@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var IPv4filterSwitch: UISwitch!
     @IBOutlet var IPv6filterSwitch: UISwitch!
     @IBOutlet var linkLayerfilterSwitch: UISwitch!
+    @IBOutlet var ssidLabel: UILabel!
     
         
     private var interfaces = Interface.allInterfaces()
@@ -33,14 +34,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         refresher.attributedTitle = NSAttributedString (string: "Pull to refresh")
         refresher.addTarget(self, action: #selector(refreshSortAndFilterData), for: .valueChanged)
         
-        // let hostname = "www.trease.eu"
-        // let dns = DNSLookup.lookup(hostname)
-        // print (hostname + ":" + dns)
-        
-        // let ip = "8.8.8.8"
-        // let dnsName = DNSLookup.reverseLookup(ip)
-        // print (ip + ":" + dnsName)
-        
+        if let interfaces = CNCopySupportedInterfaces() {
+            for i in 0..<CFArrayGetCount(interfaces){
+                let interfaceName: UnsafeRawPointer = CFArrayGetValueAtIndex(interfaces, i)
+                let rec = unsafeBitCast(interfaceName, to: AnyObject.self)
+                let unsafeInterfaceData = CNCopyCurrentNetworkInfo("\(rec)" as CFString)
+                
+                if let unsafeInterfaceData = unsafeInterfaceData as? Dictionary<AnyHashable, Any> {
+                    ssidLabel.text = unsafeInterfaceData["SSID"] as? String
+                }
+            }
+        }
+ 
         refreshSortAndFilterData()
     }
     
