@@ -28,23 +28,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         print (NSURL (fileURLWithPath: "\(#file)").lastPathComponent!, "\(#function)")
         
+        ssidLabel.text = "none"
+        ssidLabel.textColor = .lightGray
+        
         // setup pull to refresh
         refresher = UIRefreshControl()
         tableView.addSubview(refresher)
         refresher.attributedTitle = NSAttributedString (string: "Pull to refresh")
         refresher.addTarget(self, action: #selector(refreshSortAndFilterData), for: .valueChanged)
-        
-        if let interfaces = CNCopySupportedInterfaces() {
-            for i in 0..<CFArrayGetCount(interfaces){
-                let interfaceName: UnsafeRawPointer = CFArrayGetValueAtIndex(interfaces, i)
-                let rec = unsafeBitCast(interfaceName, to: AnyObject.self)
-                let unsafeInterfaceData = CNCopyCurrentNetworkInfo("\(rec)" as CFString)
-                
-                if let unsafeInterfaceData = unsafeInterfaceData as? Dictionary<AnyHashable, Any> {
-                    ssidLabel.text = unsafeInterfaceData["SSID"] as? String
-                }
-            }
-        }
  
         refreshSortAndFilterData()
     }
@@ -131,9 +122,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         
-        
         print (interfaces.count)
         tableView.reloadData()
         refresher.endRefreshing()
+        
+        ssidLabel.text = "none"
+        if let interfaces = CNCopySupportedInterfaces() {
+            for i in 0..<CFArrayGetCount(interfaces){
+                let interfaceName: UnsafeRawPointer = CFArrayGetValueAtIndex(interfaces, i)
+                let rec = unsafeBitCast(interfaceName, to: AnyObject.self)
+                let unsafeInterfaceData = CNCopyCurrentNetworkInfo("\(rec)" as CFString)
+                
+                if let unsafeInterfaceData = unsafeInterfaceData as? Dictionary<AnyHashable, Any> {
+                    ssidLabel.text = unsafeInterfaceData["SSID"] as? String
+                    ssidLabel.textColor = .black
+                }
+            }
+        }
     }
 }
