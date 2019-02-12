@@ -50,7 +50,7 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
      * as separate instances of Interface.
      * - Returns: An array containing all network interfaces in your system.
      */
-    open static func allInterfaces() -> [Interface] {
+    public static func allInterfaces() -> [Interface] {
         var interfaces : [Interface] = []
         
         var ifaddrsPtr : UnsafeMutablePointer<ifaddrs>? = nil
@@ -73,7 +73,7 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
      * Returns a new Interface instance that does not represent a real network interface, but can be used for (unit) testing.
      * - Returns: An instance of Interface that does *not* represent a real network interface.
      */
-    open static func createTestDummy(_ name:String, family:Family, address:String, multicastSupported:Bool, broadcastAddress:String?) -> Interface
+    public static func createTestDummy(_ name:String, family:Family, address:String, multicastSupported:Bool, broadcastAddress:String?) -> Interface
     {
         return Interface(name: name, family: family, address: address, netmask: nil, running: true, up: true, loopback: false, multicastSupported: multicastSupported, broadcastAddress: broadcastAddress)
     }
@@ -198,19 +198,19 @@ public class Interface : CustomStringConvertible, CustomDebugStringConvertible {
     open var supportsMulticast: Bool { return multicastSupported }
     
     /// Field `ifaddrs->ifa_name`.
-    open let name : String
+    public let name : String
     
     /// Field `ifaddrs->ifa_addr->sa_family`.
-    open let family : Family
+    public let family : Family
     
     /// Extracted from `ifaddrs->ifa_addr`, supports both IPv4 and IPv6.
-    open let address : String?
+    public let address : String?
     
     /// Extracted from `ifaddrs->ifa_netmask`, supports both IPv4 and IPv6.
-    open let netmask : String?
+    public let netmask : String?
     
     /// Extracted from `ifaddrs->ifa_dstaddr`. Not applicable for IPv6.
-    open let broadcastAddress : String?
+    public let broadcastAddress : String?
     
     fileprivate let running : Bool
     fileprivate let up : Bool

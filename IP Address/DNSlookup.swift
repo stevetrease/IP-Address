@@ -16,7 +16,7 @@ import Foundation
 
 
 public class DNSLookup {
-    open static func lookup(_ hostname: String) -> String {
+    public static func lookup(_ hostname: String) -> String {
         var address:String = ""
         let host = CFHostCreateWithName(nil,hostname as CFString).takeRetainedValue()
         CFHostStartInfoResolution(host, .addresses, nil)
@@ -33,7 +33,7 @@ public class DNSLookup {
         return (address)
     }
     
-    open static func reverseLookup(_ ip: String) -> String {
+    public static func reverseLookup(_ ip: String) -> String {
         
         /*
         var sin = sockaddr_in(
