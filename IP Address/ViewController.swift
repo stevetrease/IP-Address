@@ -139,5 +139,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
             }
         }
+        
+        let dataUsed = DataUsage.getDataUsage()
+        print ("WiFi:    ", dataUsed.wifiReceived + dataUsed.wifiSent)
+        print ("Cellular:", dataUsed.wirelessWanDataReceived + dataUsed.wirelessWanDataSent)
     }
 }

@@ -23,6 +23,7 @@
 		AAE235271F91223400FB8E69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE235261F91223400FB8E69 /* Assets.xcassets */; };
 		AAE2352A1F91223400FB8E69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE235281F91223400FB8E69 /* LaunchScreen.storyboard */; };
 		AAE235341F91254800FB8E69 /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE235331F91254800FB8E69 /* Interface.swift */; };
+		AAE59D49221314D2008D5982 /* DataUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE59D48221314D2008D5982 /* DataUsage.swift */; };
 		F08E45FF03556FE3AD50F8D7 /* Pods_IP_Address.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E59AF8F9952F45C5DC035509 /* Pods_IP_Address.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +91,7 @@
 		AAE235291F91223400FB8E69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAE2352B1F91223400FB8E69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAE235331F91254800FB8E69 /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
+		AAE59D48221314D2008D5982 /* DataUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUsage.swift; sourceTree = "<group>"; };
 		AC8FF94B6EFEB74B4FE34994 /* Pods-IP Address.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IP Address.release.xcconfig"; path = "Pods/Target Support Files/Pods-IP Address/Pods-IP Address.release.xcconfig"; sourceTree = "<group>"; };
 		D0A5CED612EB906B8ABBB984 /* Pods-IP Address.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IP Address.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IP Address/Pods-IP Address.debug.xcconfig"; sourceTree = "<group>"; };
 		E59AF8F9952F45C5DC035509 /* Pods_IP_Address.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IP_Address.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,6 +189,7 @@
 				AAE235261F91223400FB8E69 /* Assets.xcassets */,
 				AAE235281F91223400FB8E69 /* LaunchScreen.storyboard */,
 				AAE2352B1F91223400FB8E69 /* Info.plist */,
+				AAE59D48221314D2008D5982 /* DataUsage.swift */,
 			);
 			path = "IP Address";
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAE235221F91223400FB8E69 /* ViewController.swift in Sources */,
+				AAE59D49221314D2008D5982 /* DataUsage.swift in Sources */,
 				AA12DD8F1FAB85F8004EB978 /* DNSlookup.swift in Sources */,
 				AAE235201F91223400FB8E69 /* AppDelegate.swift in Sources */,
 				AAE235341F91254800FB8E69 /* Interface.swift in Sources */,
