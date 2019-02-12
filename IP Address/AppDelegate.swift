@@ -25,6 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let versionNumber: String = (Bundle.main.infoDictionary?["CFBundleVersion"] as? String)!
         print ("\(appName)  (\(versionNumber))")
         
+        if (isTestFlight()) {
+            print ("running via TestFlight")
+        } else {
+            print ("not running via TestFlight")
+        }
+        
+        
         switch (application.applicationState) {
         case .active:
             print ("didFinishLaunchingWithOptions - active")
@@ -63,3 +70,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+
+func isTestFlight () -> Bool {
+    guard let appStoreReceiptURL = Bundle.main.appStoreReceiptURL else {
+        return false
+    }
+    return appStoreReceiptURL.lastPathComponent == "sandboxReceipt"
+}
