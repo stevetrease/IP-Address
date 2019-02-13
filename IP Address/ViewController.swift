@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var IPv6filterSwitch: UISwitch!
     @IBOutlet var linkLayerfilterSwitch: UISwitch!
     @IBOutlet var ssidLabel: UILabel!
+    @IBOutlet var wifiUsageLabel: UILabel!
     
         
     private var interfaces = Interface.allInterfaces()
@@ -30,6 +31,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         ssidLabel.text = "none"
         ssidLabel.textColor = .lightGray
+        wifiUsageLabel.text = ""
+        wifiUsageLabel.textColor = .lightGray
         
         // setup pull to refresh
         refresher = UIRefreshControl()
@@ -140,8 +143,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
         
+        let formatter = ByteCountFormatter()
         let dataUsed = DataUsage.getDataUsage()
-        print ("WiFi:    ", dataUsed.wifiReceived + dataUsed.wifiSent)
-        print ("Cellular:", dataUsed.wirelessWanDataReceived + dataUsed.wirelessWanDataSent)
+        let wifiUsedString = formatter.string(fromByteCount: Int64(dataUsed.wifiReceived + dataUsed.wifiSent))
+        wifiUsageLabel.text = wifiUsedString
     }
 }
